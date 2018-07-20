@@ -12,6 +12,7 @@ export default new Router({
             path: '/',
             name: 'home',
             meta: {
+                activeMenu: 'home',
                 crumbs: [{ name: "首页", path: "" }]
             },
             component: Home

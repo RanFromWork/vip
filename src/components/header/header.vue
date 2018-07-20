@@ -1,11 +1,11 @@
 <template>
     <div class="header">
-        <Menu mode="horizontal" :theme="'dark'" active-name="currentMenu">
+        <Menu class="menu" mode="horizontal" :theme="'dark'" :active-name="currentMenu" @on-select="jump">
         <MenuItem name="home">
-            <a href="/#/">首页</a>
+            首页
         </MenuItem>
         <MenuItem name="variety">
-            <a href="/#/variety">综艺</a>
+            综艺
         </MenuItem>
     </Menu>
     </div>
@@ -13,9 +13,11 @@
 
 <style lang="less" scoped>
 .header{
-    a{
-        display: block;
-        color:#e2e2e2;
+    width: 100%;
+    background-color: #495060;
+    .menu{
+        width: 1200px;
+        margin: 0 auto;
     }
 }
 </style>
@@ -26,8 +28,15 @@ export default {
     props: {
        currentMenu: String
     },
+    methods:{
+        jump(name){
+            this.$router.push({
+                name: name
+            })
+        }
+    },
     created(){
 
-    }
+    },
 }
 </script>

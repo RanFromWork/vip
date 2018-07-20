@@ -7,6 +7,17 @@
 </style>
 <script>
 export default {
-  name: "home"
+    data(){
+        return {}
+    },
+    methods:{
+        
+    },
+    created(){
+        this.$Notice.success({
+            title: '跳转成功',
+            desc: '这里是首页页面'
+        });
+    },
 };
 </script>
