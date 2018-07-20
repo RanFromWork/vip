@@ -1,7 +1,7 @@
 <template>
-  <div class="variety">
-    hello, variety
-  </div>
+    <div class="variety">
+        hello, variety
+    </div>
 </template>
 <style>
 </style>
