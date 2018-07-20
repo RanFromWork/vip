@@ -1,23 +1,34 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+<div id="app">
+    <div class="header">
+        <mg-header :currentMenu = "currentMenu"></mg-header>
+    </div>
+    <div class="main">
+        <router-view/>
+    </div>
+</div>
 </template>
 
 <script>
+import mgHeader from "@cmp/header/header";
 export default {
-  name: 'App'
-}
+    components: {
+        mgHeader
+    },
+    data() {
+        return {
+            currentPath: [{name: "首页", path: "/"}],
+            currentMenu: "home"
+        };
+    },
+    watch: {
+        '$route' (to) {
+            this.currentMenu = this.$route.meta.activeMenu;
+        }
+    }
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
