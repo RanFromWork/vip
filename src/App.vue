@@ -9,6 +9,21 @@
 </div>
 </template>
 
+<style lang="less">
+#app{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+    .main{
+        width: 100%;
+        height: 100%; 
+    }
+}
+</style>
 <script>
 import mgHeader from "@cmp/header/header";
 export default {
@@ -29,6 +44,3 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
